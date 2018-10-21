@@ -1,0 +1,277 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<style>
+@font-face {
+      font-family: "DungGeunMo";
+      src: url("./font/DungGeunMo.eot");
+    }
+	
+body{background: url(img/bgimg.gif) repeat; background-size:cover; font-family: "DungGeunMo";}
+
+#Cplace {position: absolute; top:11%; left:20%;}
+#pauseB {position: absolute; top: 80%; left:5%;}
+
+#knife {position: absolute; top:42%; left:36%; cursor:pointer;}
+#salt {position: absolute; top: 42%; left: 38%; cursor:pointer;}
+
+#bread {position: absolute; top:46%; left:33.5%; cursor:pointer;}
+#egg {position: absolute; top:40%; left:40.5%; cursor:pointer;}
+#chicken {position: absolute; top:34.5%; left:45%; cursor:pointer;}
+#pot {position: absolute; top:30%; left:48%; cursor:pointer;}
+#water {position: absolute; top:38%; left:54.5%; cursor:pointer;}
+
+
+#body1{position: absolute; top:65%; left:34%; cursor:pointer;}
+#body2{position: absolute; top: 68%; left:45%; cursor: pointer;}
+#body3{position: absolute; top:60%; left: 58%; cursor: pointer;}
+
+
+
+
+#hannibal {position: absolute; left:60%; top:50%; animation:Hmove 10s 1; cursor:pointer; animation-play-state:paused;}
+
+#chatBox {position: absolute; top:35%; left:65%; width:169px; height: 110px; animation:Cmove 10s 1; cursor:pointer; animation-play-state:paused;}
+
+@keyframes Hmove {
+	0% {left:60%; top:50%;}
+	5% {transform: rotateY(150deg);}
+	25% {left:48%; top:35%;}
+	30% {transform: rotateY(150deg);}
+	50% {left:30%; top:55%;}
+	55% {transform: rotateY(0deg);}
+	75% {left:47%; top:68%;}
+	80% {transform: rotateY(0deg);}
+	100% {left:60%; top:50%;}
+}
+
+@keyframes Cmove {
+	0% {left:65%; top:35%;}
+	25% {left:53%; top:20%;}
+	50% {left:35%; top:40%;}
+	75% {left:52%; top:53%;}
+	100% {left:65%; top:35%;}
+}
+
+
+
+</style>
+<head>
+	<title>Hannibal's Cooking Class</title>
+
+
+
+</head>
+<body>
+
+	<div id="Cplace">
+		<img src="./img/cplace.png">
+	</div>
+	<div id="pauseB">
+		<img src="./img/pause.png">
+	</div>
+	
+	<div id="knife">
+		<img src="./img/knife.png">
+	</div>
+	<div id="salt">
+		<img src="./img/salt.png">
+	</div>
+	<div id="bread">
+		<img src="./img/bread.png">
+	</div>
+	<div id="egg">
+		<img src="./img/egg.png">
+	</div>
+	<div id="chicken">
+		<img src="./img/chicken.png">
+	</div>
+	<div id="pot">
+		<img src="./img/pot.png">
+	</div>
+	<div id="water">
+		<img src="./img/water.png">
+	</div>
+	<div id="hannibal">
+		<img src="./img/hannibal.png">
+	</div>
+	<div id="body1">
+		<img src="./img/body_1.png">
+	</div>
+	<div id="body2">
+		<img src="./img/body_2.png">
+	</div>
+	<div id="body3">
+		<img src="./img/body_3.png">
+	</div>
+
+	<div id="chatBox">
+		<img src="./img/chat/pg_1.gif" id="textpic">
+	</div>
+
+
+
+
+	<audio id="knifeM">
+		<source src="./music/knifeM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="breadM">
+		<source src="./music/breadM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="eggM">
+		<source src="./music/eggM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="chickenM">
+		<source src="./music/chickenM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="potM">
+		<source src="./music/potM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="waterM">
+		<source src="./music/waterM.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="crowedM" autoplay="true">
+		<source src="./music/crowedM.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="chatM" autoplay="true">
+		<source src="./music/chat.mp3" type="audio/mpeg">
+	</audio>
+
+
+
+	<script type="text/javascript">
+
+
+
+
+	var toggle = "off";
+	var clickNumber = 0;
+
+	knife.onclick = function(){
+		
+		if(toggle == "off"){
+			knifeM.play();
+			toggle = "on";
+			hannibal.style.top = "45%";
+			hannibal.style.left = "35%";
+			clickNumber = 1;
+			
+		}else{
+			knifeM.pause();
+			knifeM.load();
+			toggle = "off";
+			clickNumber = 1;
+		}
+	}
+	
+
+	bread.onclick = function(){
+		if(toggle == "off"){
+			breadM.play();
+			toggle = "on";
+			clickNumber = 2;
+		}else{
+			breadM.pause();
+			breadM.load();
+			toggle = "off";
+			clickNumber = 2;
+		}
+	}
+	egg.onclick = function(){
+		if(toggle == "off"){
+			eggM.play();
+			toggle = "on";
+			clickNumber = 3;
+		}else{
+			eggM.pause();
+			eggM.load();
+			toggle = "off";
+			clickNumber = 4;
+		}
+	}
+
+	chicken.onclick = function(){
+		if(toggle == "off"){
+			chickenM.play();
+			toggle = "on";
+			clickNumber = 5;
+		}else{
+			chickenM.pause();
+			chickenM.load();
+			toggle = "off";
+			clickNumber = 5;
+		}
+	}
+
+	pot.onclick = function(){
+		if(toggle == "off"){
+			potM.play();
+			toggle = "on";
+			clickNumber = 6;
+		}else{
+			potM.pause();
+			potM.load();
+			toggle = "off";
+			clickNumber = 6;
+		}
+	}
+
+	water.onclick = function(){
+		if(toggle == "off"){
+			waterM.play();
+			toggle = "on";
+			clickNumber = 7;
+		}else{
+			waterM.pause();
+			waterM.load();
+			toggle = "off";
+			clickNumber = 7;
+		}
+	}
+
+	hannibal.onclick =  function(){
+		hannibal.style.animationPlayState = "running";
+		chatBox.style.animationPlayState = "running";
+	}
+
+
+
+	var picNumber = 0;
+
+	chatBox.onclick = function(){
+		chatM.play();
+
+		picNumber++;
+		
+		var picfile = ["./img/chat/pg_1.gif", "./img/chat/pg_2.gif","./img/chat/pg_3.gif","./img/chat/pg_4.gif","./img/chat/pg_5.gif","./img/chat/pg_6.gif",]
+
+		textpic.src = picfile[picNumber];
+		
+	}
+	
+	var first = "off";
+	var second = "off";
+	
+	body1.onclick = function(){
+
+		if(toggle == "off"){
+		hannibal.style.top = "55%";
+		hannibal.style.left= "35%";
+
+		chatBox.style.top = "40%";
+		chatBox.style.left = "40%";
+		textpic.setAttribute("src","./img/chat/steak_1.gif");
+		}
+		
+	}
+
+
+
+
+	
+</script>
+
+</body>
+</html>
